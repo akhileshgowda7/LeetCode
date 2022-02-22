@@ -15,6 +15,6 @@ class solution:
         return mid
 
 
-print(solution().binarySearch([-1,0,3,5,9,12],9))
+print(solution().binarySearch([1,2,3,4,5,6,7,8,9],4))
 
 
