@@ -11,10 +11,13 @@ class Solution(object):
         :type prices: List[int]
         :rtype: int
         """
-        maxprofit = 0
+        minValue = float('inf')
+        maxProfit = 0
         for i in range(0,len(prices)):
-            for j in range(i+1,len(prices)):
-                if prices[j]-prices[i]>maxprofit:
-                    maxprofit = prices[j]-prices[i]
-        return maxprofit
+            if prices[i]<minValue:
+                minValue = prices[i]
+            else:
+                if prices[i] - minValue > maxProfit:
+                    maxProfit = prices[i] - minValue
+        return maxProfit
                     
