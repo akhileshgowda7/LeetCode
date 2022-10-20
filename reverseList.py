@@ -6,18 +6,14 @@
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
-class Solution(object):
-    def reverseList(self, head):
-        """
-        :type head: ListNode
-        :rtype: ListNode
-        """
+class Solution:
+    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        prev = None
+        cur = head
+        while cur:
+            next_temp = cur.next
+            cur.next = prev
+            prev = cur
+            cur = next_temp
         
-        new_head = None
-        while head:
-            tmp = head.next
-            head.next = new_head
-            new_head = head
-            head = tmp
-            
-        return new_head
+        return prev
